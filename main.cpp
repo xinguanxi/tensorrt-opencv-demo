@@ -10,7 +10,6 @@
 
 #include "NvInfer.h"
 #include "NvCaffeParser.h"
-#include "common.h"
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -128,9 +127,9 @@ int main(int argc, char** argv)
 	IExecutionContext *context = engine->createExecutionContext();
         while(1)
         {
-           float *data = new float[3 * 112 * 112];
+           float *data = new float[3 * 224 * 224];
            cap >> frame;
-           cv::resize(frame,frame,cv::Size(112,112));
+           cv::resize(frame,frame,cv::Size(224,224));
            frame.convertTo(frame, CV_32F);
            frame = (frame - 127.5) / 128;
            //imshow("normalization", cropImg);
