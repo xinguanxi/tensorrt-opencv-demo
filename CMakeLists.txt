@@ -12,7 +12,7 @@ INCLUDE_DIRECTORIES(
     /home/xgx/library/TensorRT-3.0.4/include
     )
 
-cuda_add_executable (${PROJECT_NAME} src/sampleMNIST.cpp src/common.h src/common.cpp)   
+cuda_add_executable (${PROJECT_NAME} main.cpp)   
 
 set(BOOST_LIB boost_system boost_filesystem boost_thread)
 
